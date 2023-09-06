@@ -1,0 +1,71 @@
+[project]
+name = "flake8-no-pytest-mark-only"
+version = "1.0.0"
+description = "Flake8 plugin to disallow the use of the pytest.mark.only decorator."
+readme = "README.md"
+license = {text = "Apache Software License"}
+authors = [
+    { name = "František Nesveda", email = "frantisek.nesveda@gmail.com" },
+]
+keywords = ["flake8", "pytest", "mark", "only"]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries",
+]
+
+requires-python = ">=3.8"
+dependencies = [
+]
+
+[project.optional-dependencies]
+dev = [
+    "autopep8 ~= 2.0.4",
+    "build ~= 1.0.0",
+    "flake8 ~= 6.1.0",
+    "flake8-bugbear ~= 23.7.10",
+    "flake8-commas ~= 2.1.0",
+    "flake8-comprehensions ~= 3.14.0",
+    "flake8-docstrings ~= 1.7.0",
+    "flake8-isort ~= 6.0.0",
+    "flake8-noqa ~= 1.3.2",
+    "flake8-pytest-style ~= 1.7.2",
+    "flake8-quotes ~= 3.3.2",
+    "flake8-simplify ~= 0.20.0",
+    "flake8-unused-arguments ~= 0.0.13",
+    "isort ~= 5.12.0",
+    "mypy ~= 1.5.1",
+    "pep8-naming ~= 0.13.3",
+    "pre-commit ~= 3.4.0",
+    "pytest ~= 7.4.1",
+    "pytest-only ~= 2.0.0",
+    "twine ~= 4.0.2",
+]
+
+[project.entry-points."flake8.extension"]
+PNO = "flake8_no_pytest_mark_only.plugin:Flake8NoPytestMarkOnly"
+
+[project.urls]
+"Homepage" = "https://www.nesveda/com/projects/flake8-no-pytest-mark-only"
+"Documentation" = "https://github.com/fnesveda/flake8-no-pytest-mark-only"
+"Source" = "https://github.com/fnesveda/flake8-no-pytest-mark-only"
+"Issue tracker" = "https://github.com/fnesveda/flake8-no-pytest-mark-only/issues"
+"Changelog" = "https://github.com/fnesveda/flake8-no-pytest-mark-only/blob/master/CHANGELOG.md"
+
+[build-system]
+requires = ["setuptools>=68.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["flake8_no_pytest_mark_only*"]
+
+[tool.setuptools.package-data]
+flake8_no_pytest_mark_only = ["py.typed"]
